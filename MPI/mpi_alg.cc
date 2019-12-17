@@ -99,8 +99,8 @@ int toTrapezeMPI (double* matrix, int rank, int nProcs) {
         #endif
         int maxIndex;
 
-        double maxValues[nProcs] = {0};
-        double maxValues_tmp[nProcs] = {0};
+        double* maxValues = new double[nProcs];
+        double* maxValues_tmp = new double[nProcs];
         double* candidates = new double [size * nProcs];
         double* candidates_tmp = new double [size * nProcs];
         fill (candidates, candidates + size*nProcs, 0);
@@ -167,6 +167,8 @@ int toTrapezeMPI (double* matrix, int rank, int nProcs) {
             }
         }
         delete[] candidates;
+        delete[] maxValues_tmp;
+        delete[] maxValues;
 
         #ifdef log
         cerr << "Step " << k << " finished" << endl;
