@@ -2,7 +2,7 @@ import itertools
 import os
 
 nCpusList = [1, 2, 4, 8, 16, 32, 64, 128, 256]
-sizesList = [256, 512, 1024, 1546, 2048, 3072, 4096]
+sizesList = [256, 512, 1024, 1536, 2048, 3072, 4096]
 #split in 2 parts, otherwise task number limit will be exceeded
 
 # os.system("mpixlcxx_r -o mpi_alg mpi_alg.cpp")
