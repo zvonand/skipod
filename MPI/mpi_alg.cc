@@ -238,15 +238,17 @@ int main (int argc, char *argv[]) {
         time += MPI_Wtime () - loc_time;
 
         //no need to reassemble the matrix - just compute null rows in every block
+        /*
         if (!rank) {
             cout << "Rank is " << size - empty << endl;
-        }
+        }*/
     }
 
     delete[] matrix;
     time /= 3;
+
     if (!rank) {
-        cout << "Time: " << fixed << setprecision(8) << time << endl;
+        cout << "Size: " << size << "   Time: " << fixed << setprecision(8) << time << endl;
     }
     MPI_Finalize();
     return 0;
